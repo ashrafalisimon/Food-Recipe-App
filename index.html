@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html data-theme="lemonade" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome To Food Recipe App</title>
+    <!-- link daisy ui & tailwindcss -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- navbar  -->
+    <header class="bg-yellow-100">
+      <div class="navbar w-11/12 mx-auto">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a class="font-medium">Home</a></li>
+              <li><a class="font-medium">All Recipe</a></li>
+              <li><a class="font-medium">Contact Us</a></li>
+            </ul>
+          </div>
+          <a
+            class="text-primary font-bold normal-case text-sm md:text-xl lg:text-xl"
+            >Food Recipe</a
+          >
+        </div>
+        <!-- search group -->
+        <div class="navbar-center">
+          <div class="form-control">
+            <div class="input-group">
+              <input
+                id="search-field"
+                type="text"
+                placeholder="Recipe Name...."
+                class="input input-bordered input-primary w-11/12 bg-transparent max-w-xs"
+              />
+              <button id="search-btn" class="btn btn-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-end hidden lg:flex">
+          <div class="">
+            <ul class="menu menu-horizontal px-1">
+              <li><a class="font-medium">Home</a></li>
+              <li><a class="font-medium">All Recipe</a></li>
+              <li><a class="font-medium">Contact Us</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-outline btn-primary">Login</a>
+        </div>
+      </div>
+    </header>
+    <main class="py-12">
+      <section id="error-message" class="hidden">
+        <h4 class="text-3xl font-medium text-center text-red-700">
+          No Food Recipe Found!!!
+        </h4>
+      </section>
+      <!-- recipe items  -->
+      
+      <section
+        id="food-items"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-4 w-11/12 md:mx-auto lg:mx-auto"
+      >
+        <!-- <div class="card w-full md:w-96  lg:w-96 xl:w-96 glass">
+          <figure><img src="images.jpeg" alt="car!" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">Life hack</h2>
+            <p>How to park your car at your garage?</p>
+            <div class="card-actions justify-center">
+              <button
+                class="btn btn-primary text-white"
+                onclick="my_modal_1.showModal()"
+              >
+                Get Recipe
+              </button>
+            </div>
+          </div>
+        </div> -->
+      </section>
+
+      <div id="showAll-conatiner" class="flex justify-center py-8 hidden">
+        <button id="btn-showAll" class="btn btn-outline btn-primary block">Show All</button>
+      </div>
+      <!-- model  -->
+
+      <section id="meal-deatils-container">
+        <dialog id="my_modal_1" class="modal">
+            <div class="modal-box">
+              <h2 id="food-name" class="text-3xl text-center text-primary font-bold"></h2>
+              <p  id="food-category" class="text-xl text-center"></p>
+              <div class="w-48 mask mask-hexagon mx-auto">
+                <img id="food-img" src="" />
+              </div>
+              <div>
+                <h3 class="font-bold">Instructions:</h3>
+                <p id="food-instruction" class="text-md"></p>
+              </div>
+              <div class="modal-action">
+                <form class="flex" method="dialog">
+                  <div class="mx-4">
+                    <a id="btn-youtube" class="btn-primary btn" href="" target="_blank">Watch Video</a>
+                  </div>
+                  <button class="btn">Close</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
